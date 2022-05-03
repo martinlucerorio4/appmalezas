@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 
-#Creando la Ventana principal
+#Create main window
 def rgb_hack(rgb):
     return "#%02x%02x%02x" % rgb 
 ws=tk.Tk()
@@ -10,12 +10,12 @@ ws.geometry("1000x1200")
 ws.title("Malezas del Sur de Córdoba")
 ws.config(bg=rgb_hack((9,100,24)))
 
-#Etiqueta para el titulo
+#Edith windows title
 ttk.Label(ws, text= "Plantulas de malezas problema",
           background='black', foreground="white",
          font="Arial 20").grid(row=2, column=2)
 
-#Etiqueta para cada una de las imagenes
+#Name of child windows
 ttk.Label(ws, text="Conyza bonaeriensis",
          font=("Times New Roman", 16,"italic")).grid(column=1, 
                                            row=3, padx=10, pady=25)
@@ -39,7 +39,7 @@ ttk.Label(ws, text="Sorghum halepense",
 ttk.Label(ws, text="Lolium multiflorum",
          font=("Times New Roman", 16,"italic")).grid(column=3, 
                                            row=5, padx=10, pady=25)
-#Descargando imagenes
+#Download images
 im1=PhotoImage(file="amaranto.png")
 im2=PhotoImage(file="conyza.gif")
 im3=PhotoImage(file="cardo.png")
@@ -47,7 +47,7 @@ im4=PhotoImage(file="mostacilla.png")
 im5=PhotoImage(file="sorgo.png")
 im6=PhotoImage(file="raigras.png")
 
-#Configuracion de las ventanas emergentes
+#Child windows configuration
 
 def amarantus():
     amarantus.ventana=tk.Tk()
@@ -245,7 +245,7 @@ def raigras():
     T.insert(tk.END, info)
     raigras.ventana.mainloop()
 
-#Configuracion de los botones
+#Buttons configuration
 b1=Button(ws, image=im1, borderwidth=3, relief="raised", padx=5, pady=10, command=amarantus)
 b2=Button(ws, image=im2, borderwidth=3, relief="raised", padx=5, pady=10, command=conyza)
 b3=Button(ws, image=im3, borderwidth=3, relief="raised", padx=5, pady=10, command=cardo )
@@ -253,7 +253,7 @@ b4=Button(ws, image=im4, borderwidth=3, relief="raised", padx=5, pady=10, comman
 b5=Button(ws, image=im5, borderwidth=3, relief="raised", padx=5, pady=10, command=sorgo )
 b6=Button(ws, image=im6, borderwidth=3, relief="raised", padx=5, pady=10, command=raigras )
 
-#Ubicación de los botones
+#Buttons localization
 b1.grid(row=4, column=2, pady=10)
 b2.grid(row=4, column=1, padx=30,pady=10)
 b3.grid(row=4, column=3, pady=10)
